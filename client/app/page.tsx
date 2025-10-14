@@ -21,6 +21,7 @@ export default function Home() {
     error: productsError,
     refetch: refetchProducts,
   } = useProducts();
+  console.log("Products data:", products);
   return (
     <>
       <ThemeToggle />
