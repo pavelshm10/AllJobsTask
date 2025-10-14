@@ -1,0 +1,26 @@
+TablePlus SQL Server Connection Details
+========================================
+
+Connection String (Copy this):
+Server=localhost,1433;Database=WeatherDB;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=True;
+
+OR use individual fields:
+
+Connection Type: Microsoft SQL Server
+Host/Server: localhost,1433
+User/Login: sa
+Password: YourStrong@Passw0rd
+Database: WeatherDB
+Trust Server Certificate: YES/Enabled
+
+Important Notes:
+- User MUST be "sa" (lowercase, 2 letters only)
+- Password is case-sensitive: YourStrong@Passw0rd
+- Host can be "localhost,1433" (with comma) or just "localhost" with port in separate field
+- MUST trust/accept the SSL certificate
+
+If TablePlus still shows "Login failed for user '1433'":
+- Make sure you're not entering "1433" in the Username/Login field
+- The Username/Login field should ONLY contain: sa
+- Port goes in the Port field or after hostname with comma: localhost,1433
+
