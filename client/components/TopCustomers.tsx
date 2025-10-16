@@ -6,25 +6,17 @@ interface TopCustomersProps {
   customers: CustomerOrderSummary[];
   loading: boolean;
   error: string | null;
-  onRefresh: () => void;
 }
 
 export default function TopCustomers({
   customers,
   loading,
   error,
-  onRefresh,
 }: TopCustomersProps) {
   return (
-    <div className="bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl shadow-2xl p-8 mb-8 text-white">
+    <div className="bg-indigo-600 rounded-2xl shadow-2xl p-8 mb-8 text-white">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-3xl font-bold">🏆 Top Customers</h2>
-        <button
-          onClick={onRefresh}
-          className="px-4 py-2 bg-white text-indigo-600 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium shadow-md text-sm"
-        >
-          Refresh
-        </button>
+        <h2 className="text-3xl font-bold">Top Customers</h2>
       </div>
 
       {loading && (
@@ -54,9 +46,6 @@ export default function TopCustomers({
             >
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-2xl font-bold">
-                    #{index + 1}
-                  </div>
                   <div>
                     <h3 className="text-xl font-bold">
                       {customer.customerName}

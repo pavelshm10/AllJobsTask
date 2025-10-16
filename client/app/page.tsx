@@ -12,14 +12,14 @@ export default function Home() {
     data: topCustomers = [],
     isLoading: customersLoading,
     error: customersError,
-    refetch: refetchCustomers,
+    // refetch: refetchCustomers,
   } = useTopCustomers(3);
 
   const {
     data: products = [],
     isLoading: productsLoading,
     error: productsError,
-    refetch: refetchProducts,
+    // refetch: refetchProducts,
   } = useProducts();
   return (
     <>
@@ -35,13 +35,11 @@ export default function Home() {
             customers={topCustomers}
             loading={customersLoading}
             error={customersError?.message ?? null}
-            onRefresh={() => refetchCustomers()}
           />
           <ProductsTable
             products={products}
             loading={productsLoading}
             error={productsError?.message ?? null}
-            onRefresh={() => refetchProducts()}
           />
         </div>
       </main>

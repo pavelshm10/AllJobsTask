@@ -16,14 +16,12 @@ interface ProductsTableProps {
   products: Product[];
   loading: boolean;
   error: string | null;
-  onRefresh: () => void;
 }
 
 export default function ProductsTable({
   products,
   loading,
   error,
-  onRefresh,
 }: ProductsTableProps) {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -233,8 +231,8 @@ export default function ProductsTable({
       )}
 
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-3xl font-semibold text-gray-800 dark:text-gray-100">
-          📦 Products Inventory
+        <h2 className="text-3xl font-semibold text-gray-800 dark:text-gray-300">
+          Products Inventory
           {selectedProducts.size > 0 && (
             <span className="ml-3 text-sm font-normal text-indigo-600">
               ({selectedProducts.size} selected)
@@ -302,12 +300,6 @@ export default function ProductsTable({
             </svg>
             Add Product
           </Link>
-          <button
-            onClick={onRefresh}
-            className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 font-medium shadow-md"
-          >
-            Refresh
-          </button>
         </div>
       </div>
 
@@ -408,7 +400,7 @@ export default function ProductsTable({
                     />
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                    <div className="text-sm font-medium text-gray-900 dark:text-gray-300">
                       {product.productName}
                     </div>
                   </td>
@@ -423,29 +415,16 @@ export default function ProductsTable({
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm font-semibold text-green-600 dark:text-green-400">
+                    <div className="text-sm dark:text-gray-300">
                       ${product.unitPrice.toFixed(2)}
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900 dark:text-gray-100">
+                    <div className="text-sm text-gray-900 dark:text-gray-300">
                       <span
-                        className={`font-medium ${
-                          product.units < 50
-                            ? "text-red-600"
-                            : product.units < 100
-                            ? "text-yellow-600"
-                            : "text-green-600"
-                        }`}
+                        className={`font-medium`}
                       >
                         {product.units}
-                      </span>
-                      <span className="text-gray-500 ml-1">
-                        {product.units < 50
-                          ? "⚠️"
-                          : product.units < 100
-                          ? "⚡"
-                          : "✓"}
                       </span>
                     </div>
                   </td>
