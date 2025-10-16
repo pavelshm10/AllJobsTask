@@ -1,6 +1,7 @@
 "use client";
-
+import { useEffect } from "react";
 import { CustomerOrderSummary } from "@/types";
+import { useToast } from "@/context/ToastContext";
 
 interface TopCustomersProps {
   customers: CustomerOrderSummary[];
@@ -13,6 +14,15 @@ export default function TopCustomers({
   loading,
   error,
 }: TopCustomersProps) {
+  const { showError } = useToast();
+
+  // Show error toast when error occurs
+  useEffect(() => {
+    if (error) {
+      showError(`Failed to load top customers: ${error}`);
+    }
+  }, [error, showError]);
+
   return (
     <div className="bg-indigo-600 rounded-2xl shadow-2xl p-8 mb-8 text-white">
       <div className="flex justify-between items-center mb-6">
@@ -26,20 +36,9 @@ export default function TopCustomers({
         </div>
       )}
 
-      {error && (
-        <div className="bg-red-500/20 border-l-4 border-white p-4 rounded-lg">
-          <p className="text-sm">
-            <span className="font-medium">Error:</span> {error}
-          </p>
-          <p className="text-xs mt-1 text-white/80">
-            Make sure the backend API is running
-          </p>
-        </div>
-      )}
-
       {!loading && !error && customers.length > 0 && (
         <div className="grid gap-6 md:grid-cols-3">
-          {customers.map((customer, index) => (
+          {customers.map((customer) => (
             <div
               key={customer.id}
               className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-200"
