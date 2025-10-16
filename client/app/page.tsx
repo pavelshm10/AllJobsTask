@@ -1,10 +1,10 @@
 "use client";
 
-import TopCustomers from "@/components/TopCustomers";
-import ProductsTable from "@/components/ProductsTable";
+import { TopCustomers } from "@/components";
+import { ProductsTable } from "@/components/Products";
+import { ThemeToggle } from "@/components/UI";
 import { useTopCustomers } from "@/hooks/useTopCustomers";
 import { useProducts } from "@/hooks/useProducts";
-import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   // Use React Query hooks for data fetching

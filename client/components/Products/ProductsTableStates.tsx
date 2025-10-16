@@ -4,19 +4,15 @@ import { Product } from "@/types";
 
 interface ProductsTableStatesProps {
   loading: boolean;
-  error: string | null;
   products: Product[];
   filteredProducts: Product[];
-  searchQuery: string;
   onClearSearch: () => void;
 }
 
 export default function ProductsTableStates({
   loading,
-  error,
   products,
   filteredProducts,
-  searchQuery,
   onClearSearch,
 }: ProductsTableStatesProps) {
   if (loading) {

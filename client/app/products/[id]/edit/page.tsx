@@ -6,12 +6,13 @@ import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { useProducts } from "@/hooks/useProducts";
 import { useUpdateProduct } from "@/hooks/useUpdateProduct";
-import ProductForm, { ProductFormData } from "@/components/ProductForm";
-import SuccessBanner from "@/components/SuccessBanner";
-import ErrorBanner from "@/components/ErrorBanner";
-import ConfirmDialog from "@/components/ConfirmDialog";
-import { Product } from "@/types";
-import ThemeToggle from "@/components/ThemeToggle";
+import { ProductForm, ProductFormData } from "@/components/Forms";
+import {
+  SuccessBanner,
+  ErrorBanner,
+  ConfirmDialog,
+  ThemeToggle,
+} from "@/components/UI";
 
 const API_URL = "https://localhost:5001/api";
 

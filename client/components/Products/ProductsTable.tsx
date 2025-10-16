@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 import { Product } from "@/types";
-import SearchBar from "./SearchBar";
-import Pagination from "./Pagination";
+import SearchBar from "../UI/SearchBar";
+import Pagination from "../UI/Pagination";
 import ProductsTableHeader from "./ProductsTableHeader";
 import ProductsTableBody from "./ProductsTableBody";
 import ProductsTableModals from "./ProductsTableModals";
@@ -139,10 +139,8 @@ export default function ProductsTable({
 
       <ProductsTableStates
         loading={loading}
-        error={error}
         products={products}
         filteredProducts={filteredProducts}
-        searchQuery={searchQuery}
         onClearSearch={clearSearch}
       />
 

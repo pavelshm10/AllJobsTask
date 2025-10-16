@@ -1,8 +1,8 @@
 "use client";
 
-import ConfirmDialog from "./ConfirmDialog";
-import ErrorBanner from "./ErrorBanner";
-import SuccessBanner from "./SuccessBanner";
+import ConfirmDialog from "../UI/ConfirmDialog";
+import ErrorBanner from "../UI/ErrorBanner";
+import SuccessBanner from "../UI/SuccessBanner";
 import { Product } from "@/types";
 
 interface ProductsTableModalsProps {

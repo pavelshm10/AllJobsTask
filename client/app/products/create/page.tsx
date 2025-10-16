@@ -4,10 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { useProducts } from "@/hooks/useProducts";
 import { useCreateProduct } from "@/hooks/useCreateProduct";
-import ProductForm, { ProductFormData } from "@/components/ProductForm";
-import SuccessBanner from "@/components/SuccessBanner";
-import ErrorBanner from "@/components/ErrorBanner";
-import ThemeToggle from "@/components/ThemeToggle";
+import { ProductForm, ProductFormData } from "@/components/Forms";
+import { SuccessBanner, ErrorBanner, ThemeToggle } from "@/components/UI";
 
 const FORM_STORAGE_KEY = "createProductForm";
 

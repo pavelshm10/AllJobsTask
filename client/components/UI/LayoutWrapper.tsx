@@ -1,7 +1,7 @@
 "use client";
 
 import QueryProvider from "@/providers/QueryProvider";
-import ErrorBoundary from "@/components/ErrorBoundary";
+import ErrorBoundary from "./ErrorBoundary";
 import { ToastProvider } from "@/context/ToastContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 
