@@ -36,9 +36,9 @@ export default function SearchBar({
   };
 
   return (
-    <div className="mb-6 relative">
-      <div className="flex items-center gap-4">
-        <div className="flex-1 relative">
+    <div className="mb-4 sm:mb-6 relative">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
+        <div className="w-full relative">
           <div className="relative">
             <input
               type="text"
@@ -47,10 +47,10 @@ export default function SearchBar({
               onFocus={handleFocus}
               onBlur={handleBlur}
               placeholder="Search by product name or category..."
-              className="w-full px-4 py-3 pl-12 pr-10 border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg focus:outline-none focus:border-green-500 dark:focus:border-green-400 transition-colors"
+              className="w-full px-3 py-2 sm:px-4 sm:py-3 pl-10 sm:pl-12 pr-8 sm:pr-10 border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg focus:outline-none focus:border-green-500 dark:focus:border-green-400 transition-colors text-sm sm:text-base"
             />
             <svg
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-500"
+              className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-gray-400 dark:text-gray-500"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -65,10 +65,10 @@ export default function SearchBar({
             {searchQuery && (
               <button
                 onClick={onClear}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
+                className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
               >
                 <svg
-                  className="h-5 w-5"
+                  className="h-4 w-4 sm:h-5 sm:w-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -118,7 +118,7 @@ export default function SearchBar({
         </div>
 
         {searchQuery && (
-          <div className="text-sm text-gray-600 dark:text-gray-400">
+          <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 w-full sm:w-auto text-center sm:text-left">
             Found{" "}
             <span className="font-semibold text-green-600 dark:text-green-400">
               {resultCount}

@@ -62,16 +62,16 @@ export default function CreateProductPage() {
   return (
     <>
       <ThemeToggle />
-      <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8 transition-colors duration-300">
+      <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 lg:p-8 transition-colors duration-300">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <Link
               href="/"
-              className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-4"
+              className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-4 text-sm sm:text-base"
             >
               <svg
-                className="h-5 w-5 mr-2"
+                className="h-4 w-4 sm:h-5 sm:w-5 mr-2"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -85,10 +85,10 @@ export default function CreateProductPage() {
               </svg>
               Back to Home
             </Link>
-            <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 dark:text-gray-100">
               Create New Product
             </h1>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">
+            <p className="text-gray-600 dark:text-gray-400 mt-2 text-sm sm:text-base">
               Add a new product to the inventory. All fields are required.
             </p>
           </div>
@@ -110,7 +110,7 @@ export default function CreateProductPage() {
           )}
 
           {/* Form */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 transition-colors duration-300">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl card-responsive transition-colors duration-300">
             <ProductForm
               suppliers={suppliers}
               categories={categories}

@@ -72,7 +72,7 @@ export default function ProductForm({
   };
 
   return (
-    <form onSubmit={handleSubmit(handleFormSubmit)} className="space-y-6">
+    <form onSubmit={handleSubmit(handleFormSubmit)} className="form-responsive">
       <ProductFormFields
         register={register}
         errors={errors}

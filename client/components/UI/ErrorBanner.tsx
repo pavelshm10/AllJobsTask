@@ -7,12 +7,12 @@ interface ErrorBannerProps {
 
 export default function ErrorBanner({ message, onDismiss }: ErrorBannerProps) {
   return (
-    <div className="mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-lg animate-fade-in">
+    <div className="mb-4 sm:mb-6 bg-red-50 border-l-4 border-red-500 p-3 sm:p-4 rounded-lg animate-fade-in">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <div className="flex-shrink-0">
             <svg
-              className="h-5 w-5 text-red-500"
+              className="h-4 w-4 sm:h-5 sm:w-5 text-red-500"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -23,8 +23,10 @@ export default function ErrorBanner({ message, onDismiss }: ErrorBannerProps) {
               />
             </svg>
           </div>
-          <div className="ml-3">
-            <p className="text-sm font-medium text-red-800">{message}</p>
+          <div className="ml-2 sm:ml-3">
+            <p className="text-xs sm:text-sm font-medium text-red-800">
+              {message}
+            </p>
           </div>
         </div>
         <button
@@ -32,7 +34,7 @@ export default function ErrorBanner({ message, onDismiss }: ErrorBannerProps) {
           className="text-red-500 hover:text-red-700 transition-colors"
         >
           <svg
-            className="h-5 w-5"
+            className="h-4 w-4 sm:h-5 sm:w-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

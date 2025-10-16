@@ -20,11 +20,11 @@ export default function ProductFormActions({
   return (
     <>
       {/* Action Buttons */}
-      <div className="flex gap-4 pt-4">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
         <button
           type="submit"
           disabled={isSubmitting || (productId !== undefined && !isDirty)}
-          className="flex-1 bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="flex-1 bg-green-600 text-white px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg font-medium hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm sm:text-base"
         >
           {isSubmitting ? (
             <span className="flex items-center justify-center">
@@ -56,7 +56,7 @@ export default function ProductFormActions({
         <button
           type="button"
           onClick={onReset}
-          className="px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-colors"
+          className="px-4 py-2.5 sm:px-6 sm:py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-colors text-sm sm:text-base"
         >
           {productId !== undefined ? "Reset Changes" : "Clear Form"}
         </button>

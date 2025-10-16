@@ -104,7 +104,7 @@ export default function ProductsTable({
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 mb-8 transition-colors duration-300">
+    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl card-responsive mb-8 transition-colors duration-300">
       <ProductsTableModals
         showDeleteConfirm={showDeleteConfirm}
         showBulkDeleteConfirm={showBulkDeleteConfirm}

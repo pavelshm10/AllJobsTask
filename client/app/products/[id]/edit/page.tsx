@@ -108,11 +108,13 @@ export default function EditProductPage() {
   // Loading state
   if (productLoading) {
     return (
-      <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8 transition-colors duration-300">
+      <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 lg:p-8 transition-colors duration-300">
         <div className="max-w-3xl mx-auto">
           <div className="text-center py-12">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
-            <p className="mt-4 text-gray-600">Loading product...</p>
+            <div className="inline-block animate-spin rounded-full h-8 w-8 sm:h-12 sm:w-12 border-b-2 border-indigo-600"></div>
+            <p className="mt-4 text-gray-600 text-sm sm:text-base">
+              Loading product...
+            </p>
           </div>
         </div>
       </main>
@@ -122,12 +124,12 @@ export default function EditProductPage() {
   // Error state
   if (productError || !product) {
     return (
-      <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8 transition-colors duration-300">
+      <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 lg:p-8 transition-colors duration-300">
         <div className="max-w-3xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
+          <div className="bg-white rounded-2xl shadow-xl card-responsive">
             <div className="text-center py-12">
               <svg
-                className="mx-auto h-12 w-12 text-red-500"
+                className="mx-auto h-8 w-8 sm:h-12 sm:w-12 text-red-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -139,15 +141,15 @@ export default function EditProductPage() {
                   d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <h2 className="mt-4 text-xl font-semibold text-gray-800">
+              <h2 className="mt-4 text-lg sm:text-xl font-semibold text-gray-800">
                 Product Not Found
               </h2>
-              <p className="mt-2 text-gray-600">
+              <p className="mt-2 text-gray-600 text-sm sm:text-base">
                 The product you're trying to edit doesn't exist.
               </p>
               <Link
                 href="/"
-                className="mt-6 inline-block px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                className="mt-6 inline-block px-4 py-2.5 sm:px-6 sm:py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm sm:text-base"
               >
                 Back to Home
               </Link>
@@ -161,16 +163,16 @@ export default function EditProductPage() {
   return (
     <>
       <ThemeToggle />
-      <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8 transition-colors duration-300">
+      <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 lg:p-8 transition-colors duration-300">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <Link
               href="/"
-              className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-4"
+              className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-4 text-sm sm:text-base"
             >
               <svg
-                className="h-5 w-5 mr-2"
+                className="h-4 w-4 sm:h-5 sm:w-5 mr-2"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -184,8 +186,10 @@ export default function EditProductPage() {
               </svg>
               Back to Home
             </Link>
-            <h1 className="text-4xl font-bold text-gray-800">Edit Product</h1>
-            <p className="text-gray-600 mt-2">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">
+              Edit Product
+            </h1>
+            <p className="text-gray-600 mt-2 text-sm sm:text-base">
               Update product information. All fields are required.
             </p>
           </div>
@@ -207,7 +211,7 @@ export default function EditProductPage() {
           )}
 
           {/* Form */}
-          <div className="bg-white rounded-2xl shadow-xl p-8">
+          <div className="bg-white rounded-2xl shadow-xl card-responsive">
             <ProductForm
               suppliers={suppliers}
               categories={categories}

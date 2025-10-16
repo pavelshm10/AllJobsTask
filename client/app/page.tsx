@@ -24,10 +24,10 @@ export default function Home() {
   return (
     <>
       <ThemeToggle />
-      <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8 transition-colors duration-300">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+      <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 lg:p-8 transition-colors duration-300">
+        <div className="container-responsive">
+          <div className="text-center mb-8 sm:mb-12">
+            <h1 className="heading-responsive font-bold text-gray-800 dark:text-gray-100 mb-4">
               Online Shop
             </h1>
           </div>
